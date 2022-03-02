@@ -5,6 +5,7 @@ import MyContext from './planetsContex';
 
 function Provider({ children }) {
   const [planets, setPlanets] = useState([]);
+  const [filter, setFilter] = useState({ filterByName: { name: '' } }); // manipular o estado no filtro de pesquisa dos planetas
 
   // função que utiliza a API;
   async function returnPlanets() {
@@ -17,8 +18,13 @@ function Provider({ children }) {
     returnPlanets();
   }, []);
 
+  // função necessaria para o filtro funcionar
+  function searchName({ target }) {
+    setFilter({ filterByName: { name: target.value } });
+  }
+
   return (
-    <MyContext.Provider value={ { planets } }>
+    <MyContext.Provider value={ { planets, searchName, filter } }>
       {children}
     </MyContext.Provider>
   );

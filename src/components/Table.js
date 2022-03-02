@@ -1,8 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import MyContext from '../context/planetsContex';
 
 function Table() {
-  const { planets } = useContext(MyContext);
+  const { planets, filter } = useContext(MyContext);
+  const [filterPlanets, setFilterPlanets] = useState([]);
+
+  // função do filtro usada direto no useEffect
+  useEffect(() => {
+    const filterNames = planets.filter((planet) => (
+      planet.name.includes(filter.filterByName.name)));
+    setFilterPlanets(filterNames);
+  }, [planets, filter]);
 
   return (
     <table>
@@ -24,7 +32,7 @@ function Table() {
         </tr>
       </thead>
       <tbody>
-        { planets.map((planet) => (
+        {filterPlanets.map((planet) => (
           <tr key={ planet.name }>
             <td>{planet.name}</td>
             <td>{planet.climate}</td>
