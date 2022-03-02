@@ -3,10 +3,10 @@ import MyContext from '../context/planetsContex';
 
 function FilterValue() {
   const { setFilter } = useContext(MyContext);
-  const columns = [
-    'population', 'orbital_period', 'diameter', 'rotation_period', 'surface_water']; // Colunas dada pelo README.
+  const [columns, setColumns] = useState([
+    'population', 'orbital_period', 'diameter', 'rotation_period', 'surface_water']); // Colunas dada pelo README.
   const comparisonFilter = ['maior que', 'menor que', 'igual a']; // Filtros de comparação disponiveis no README.
-  const [inputColumn, setInputColumn] = useState('population'); // valor inicial setado 'population
+  const [inputColumn, setInputColumn] = useState('population'); // valor inicial setado 'population'
   const [inputComparison, setInputComparison] = useState('maior que'); // valor inicial setado 'maior que'
   const [inputValue, setValueInput] = useState(0); // 0 é o valor inicial.
 
@@ -19,6 +19,7 @@ function FilterValue() {
         value: inputValue }],
     }));
     setValueInput('');
+    setColumns(columns.filter((selected) => selected !== inputColumn));
   };
 
   return (
