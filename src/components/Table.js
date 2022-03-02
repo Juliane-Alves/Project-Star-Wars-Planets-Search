@@ -5,10 +5,26 @@ function Table() {
   const { planets, filter } = useContext(MyContext);
   const [filterPlanets, setFilterPlanets] = useState([]);
 
-  // função do filtro usada direto no useEffect
+  // estrutura para verificação das condições pedidas para filtragem
+  const numericFilter = (planet, filterByNumValue) => {
+    const { columns, comparisonFilter, value } = filterByNumValue;
+    if (comparisonFilter === 'maior que') {
+      return Number(planet[columns]) > Number(value);
+    }
+    if (comparisonFilter === 'menor que') {
+      return Number(planet[columns]) < Number(value);
+    }
+    if (comparisonFilter === 'igual a') {
+      return Number(planet[columns]) === Number(value);
+    }
+  };
+
+  // função do filtro por nome usada direto no useEffect// também por numero de acordo com o requisito 3
   useEffect(() => {
     const filterNames = planets.filter((planet) => (
-      planet.name.includes(filter.filterByName.name)));
+      planet.name.includes(filter.filterByName.name)
+        && filter.filterByNumericValues
+          .every((searchFilter) => numericFilter(planet, searchFilter))));
     setFilterPlanets(filterNames);
   }, [planets, filter]);
 
