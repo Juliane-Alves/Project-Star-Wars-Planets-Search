@@ -19,7 +19,7 @@ function FilterValue() {
         value: inputValue }],
     }));
     setValueInput('');
-    setColumns(columns.filter((selected) => selected !== inputColumn));
+    setColumns(columns.filter((selected) => selected !== inputColumn)); // verificação pra não repetir filtro
   };
 
   return (
