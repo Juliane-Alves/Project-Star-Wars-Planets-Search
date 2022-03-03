@@ -9,6 +9,7 @@ function SearchInput() {
     <form onSubmit={ (e) => e.preventDefault() }>
       <label htmlFor="name-input">
         <input
+          className="input-search"
           data-testid="name-filter"
           type="text"
           name="searchPlanets"

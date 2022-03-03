@@ -26,6 +26,7 @@ function FilterValue() {
     <form>
       <label htmlFor="column-filter">
         <select
+          className="select"
           data-testid="column-filter"
           id="column-filter"
           onChange={ ({ target }) => setInputColumn(target.value) } // Vai pegar o valor escolhido da coluna.
@@ -38,6 +39,7 @@ function FilterValue() {
 
       <label htmlFor="comparison-filter">
         <select
+          className="select"
           data-testid="comparison-filter"
           id="comparison-filter"
           onChange={ ({ target }) => setInputComparison(target.value) } // Seleção do valor escolhido
@@ -50,6 +52,7 @@ function FilterValue() {
 
       <label htmlFor="value-filter">
         <input
+          className="select"
           data-testid="value-filter"
           type="number"
           id="value-filter"
@@ -58,6 +61,7 @@ function FilterValue() {
         />
       </label>
       <button
+        className="button"
         data-testid="button-filter"
         type="button"
         onClick={ filterButton }

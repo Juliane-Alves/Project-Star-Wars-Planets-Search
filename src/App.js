@@ -4,6 +4,7 @@ import Provider from './context/Provider';
 import Table from './components/Table';
 import Search from './components/Search';
 import FilterValue from './components/FilterValue';
+// import Background from './img/Background.jpg';
 
 function App() {
   return (
