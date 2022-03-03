@@ -31,63 +31,6 @@
   color: #61dafb;
 }
 
-
-body {
-  display: flex;
-  font-family: 'League Spartan', sans-serif;
-  text-align: center;
-  color: rgb(248, 247, 247);
-  background: linear-gradient(68.15deg, #030303 16.62%, #5a5951 85.61%);
-}
-
-h1 {
-  color: #aaa9a9;
-  font-size: 70px;
-  text-shadow: 2px 2px rgb(248, 248, 243);
-}
- table {
-  margin-top: 20px;
-  border: 0.1px solid;
-  border-radius: 5px;
- }
-
- form {
-  width: 80%;
-	margin: 0 auto;
-	padding: 7px;
-	margin-bottom: 10px;
- }
-
-.input-search {
-  background-color: #a1a09b;
-  border-radius: 20px;
-  padding: 8px;
-  font-family: 'League Spartan', sans-serif;
-}
-
-.select {
-  display: inline-block;
-  padding: 4px;
-  margin: 10px;
-  border-radius: 20px;
-  background-color: #a1a09b;
-  font-family: 'League Spartan', sans-serif;
-  font-weight: 400;
-  color: rgb(12, 12, 12);
-}
-
-.button {
-  padding: 6px;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 20px;
-  background-color: #a1a09b;
-  font-family: 'League Spartan', sans-serif;
-  font-weight: 400;
-  color: rgb(8, 8, 8);
-}
-
-
 @keyframes App-logo-spin {
 
   from {
